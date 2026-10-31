@@ -1,0 +1,520 @@
+/* ==========================================================================
+   WILDBOUND — responsive layout (desktop, tablet, phone, landscape)
+   ========================================================================== */
+
+@media (max-width: 1220px) {
+  .map-screen { grid-template-columns: minmax(0, 1fr) 300px; }
+  .title-creature { width: clamp(140px, 15vw, 210px); }
+  .title-creature.small { width: clamp(76px, 7.5vw, 110px); }
+}
+
+@media (max-width: 1020px) {
+  .map-screen { grid-template-columns: minmax(0, 1fr) 278px; gap: 14px; }
+  .map-head p { font-size: 11.5px; }
+  .enemy-side { width: clamp(200px, 31vw, 300px); }
+  .player-side { width: clamp(130px, 17vw, 180px); }
+  .combat-log { max-width: 190px; }
+  .combat-log span { font-size: 9px; }
+  .charm-tile { padding: 18px 12px 15px; }
+  .charm-desc { font-size: 10.5px; }
+}
+
+@media (max-width: 900px) {
+  .map-screen { grid-template-columns: minmax(0, 1fr); }
+  .map-scroll { height: 56vh; min-height: 360px; max-height: 640px; }
+  .map-side { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+  .warden-card { grid-column: 1 / -1; }
+  .legend-card { grid-column: 1 / -1; }
+  .legend-grid { grid-template-columns: repeat(3, 1fr); }
+  .shop-head { gap: 18px; }
+  .shop-keeper { width: 110px; }
+  .title-footer { font-size: 9.5px; }
+}
+
+@media (max-width: 760px) {
+  :root { --topbar: 56px; }
+
+  .topbar {
+    gap: 8px;
+    padding-left: max(10px, env(safe-area-inset-left, 0px));
+    padding-right: max(10px, env(safe-area-inset-right, 0px));
+  }
+  .brand { gap: 7px; }
+  .brand-mark { width: 27px; height: 27px; }
+  .brand-mark .ico { width: 15px; height: 15px; }
+  .brand-word { font-size: 13px; letter-spacing: 0.13em; }
+  .hud { gap: 9px; }
+  .hud-hp, .hud-gold, .hud-floor { font-size: 11.5px; gap: 5px; }
+  .hud b { font-size: 12px; }
+  .hud-hpbar { width: 44px; height: 5px; }
+  .hud-actions { gap: 1px; }
+  .hud-btn { padding: 6px 7px; min-height: 34px; gap: 4px; }
+  .hud-btn span { display: none; }
+  .hud-btn .ico { font-size: 17px; }
+  .hud-btn b { font-size: 9.5px; padding: 1px 4px; }
+
+  /* title */
+  .title-content { padding: clamp(42px, 8vh, 70px) 18px 20px; }
+  .title-eyebrow { font-size: 8px; letter-spacing: 0.28em; margin-bottom: 12px; }
+  .logo { font-size: clamp(50px, 15vw, 86px); }
+  .logo-rule { margin: 11px 0 9px; width: min(360px, 82vw); }
+  .title-sub { font-size: 10px; letter-spacing: 0.32em; }
+  .title-lede { font-size: 13.5px; margin-top: 14px; }
+  .title-buttons { margin-top: 24px; width: min(360px, 100%); }
+  .title-small-buttons { flex-direction: row; flex-wrap: wrap; }
+  .title-small-buttons .btn { font-size: 11px; padding: 6px 9px; }
+  .title-meta { margin-top: 20px; font-size: 10px; gap: 7px; }
+  .title-creature { display: none; }
+  .title-moon { top: 4%; right: 2%; width: 118px; }
+  .title-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    font-size: 9px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* prologue */
+  .prologue-inner { padding: 44px 20px 48px; }
+  .prologue-inner .display { font-size: clamp(38px, 10vw, 56px); }
+  .prologue-copy { margin-top: 16px; font-size: 13px; }
+  .prologue-steps { grid-template-columns: 1fr; gap: 7px; margin-top: 22px; }
+  .pstep { flex-direction: row; align-items: center; gap: 10px; padding: 10px 12px; }
+  .pstep-ic { width: 30px; height: 30px; margin: 0; flex: none; }
+  .pstep b { flex: none; width: 58px; font-size: 12px; }
+  .pstep i { font-size: 10.5px; }
+  .prologue-actions { width: 100%; margin-top: 24px; }
+  .prologue-actions .btn { width: 100%; }
+  .prologue-creature { width: 64vw; right: -16%; bottom: 0; opacity: 0.16; z-index: 1; }
+
+  /* map */
+  .map-screen { padding: 12px 10px 20px; gap: 12px; }
+  .map-panel { padding: 13px 10px; border-radius: 15px; }
+  .map-head { padding-bottom: 11px; gap: 10px; }
+  .map-head p { font-size: 10.5px; max-width: 280px; }
+  .map-progress b { font-size: 24px; }
+  .map-progress i { display: none; }
+  .map-scroll { height: 52vh; min-height: 330px; padding: 12px 0 4px; }
+  .map-row { min-height: 92px; padding-left: 28px; }
+  .map-row.boss-row { min-height: 120px; }
+  .floor-tag { font-size: 8px; }
+  .map-node { width: 108px; gap: 3px; padding: 4px 2px; }
+  .node-disc { width: 47px; height: 47px; }
+  .node-disc .ico { width: 19px; height: 19px; }
+  .node-pulse { width: 47px; height: 47px; margin-left: -23.5px; }
+  .node-name { font-size: 8px; letter-spacing: 0.08em; }
+  .node-tip { top: 50px; width: 150px; font-size: 9px; }
+  .node-check { right: 17px; width: 14px; height: 14px; }
+  .map-node.boss-node { width: 132px; }
+  .map-node.boss-node .node-disc { width: 68px; height: 68px; }
+  .map-node.boss-node .node-disc .ico { width: 28px; height: 28px; }
+  .map-node.boss-node .node-pulse { width: 68px; height: 68px; margin-left: -34px; }
+  .map-side { grid-template-columns: 1fr; }
+  .legend-grid { grid-template-columns: 1fr 1fr; }
+  .side-card { padding: 12px; }
+
+  /* combat */
+  body[data-screen='combat'] .screen { overflow: hidden; }
+  .combat-screen { height: 100%; min-height: 0; }
+  .arena-moon { width: 96px; top: 1%; left: 2%; opacity: 0.26; }
+  .arena-topline { top: 8px; left: 10px; right: 10px; }
+  .turn-pill { padding: 4px 9px; font-size: 7.5px; }
+  .combat-mode { font-size: 7px; letter-spacing: 0.16em; }
+
+  .enemy-side {
+    top: 32px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    gap: 1px;
+  }
+  .intent-wrap { margin-bottom: 1px; }
+  .intent { padding: 4px 8px 4px 4px; gap: 5px; max-width: 80vw; }
+  .intent-icon { width: 22px; height: 22px; }
+  .intent-icon .ico { width: 12px; height: 12px; }
+  .intent-text b { font-size: 8px; }
+  .intent-text i { font-size: 8px; max-width: 56vw; overflow: hidden; text-overflow: ellipsis; }
+  .intent.second { display: none; }
+  .enemy-nameplate b { font-size: 16px; }
+  .enemy-nameplate i { font-size: 9px; margin-bottom: 1px; }
+  .enemy-nameplate .eyebrow { font-size: 6.5px; }
+  .enemy-figure { height: clamp(120px, 23vh, 205px); }
+  .enemy-hp { width: min(250px, 76vw); }
+  .enemy-side .status-row { max-width: 84vw; }
+  .trait-line { max-width: 78vw; font-size: 8px; margin-top: 1px; }
+  .trait-line b { font-size: 8px; }
+  .trait-line span { max-width: 52vw; }
+
+  .player-side {
+    left: 3px;
+    bottom: 6px;
+    width: 108px;
+    gap: 1px;
+  }
+  .player-nameplate .eyebrow { display: none; }
+  .player-nameplate b { font-size: 10px; letter-spacing: 0.06em; }
+  .player-figure { height: clamp(84px, 16vh, 134px); }
+  .player-hp { max-width: 104px; }
+  .player-side .status-row { max-width: 108px; gap: 2px; }
+  .player-side .status-chip { font-size: 8px; padding: 1px 4px 1px 3px; }
+  .player-side .status-chip .ico { width: 9px; height: 9px; }
+  .block-badge { right: 0; bottom: 8%; font-size: 9px; padding: 2px 6px 2px 4px; }
+  .block-badge .ico { width: 10px; height: 10px; }
+  .block-badge b { font-size: 9px; }
+
+  .arena-center { bottom: 16%; }
+  .catch-orb { width: 62px; height: 62px; }
+  .catch-orb .orb-label { font-size: 7px; }
+  .catch-hint { padding: 4px 9px; font-size: 8.5px; gap: 5px; }
+  .catch-hint .ico { width: 11px; height: 11px; }
+  .combat-log { display: none; }
+  .combat-hint { display: none; }
+
+  .combat-bottom {
+    height: auto;
+    padding: 0 6px calc(5px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(180deg, rgba(8, 11, 18, 0) 0%, rgba(8, 11, 18, 0.82) 16%, #080b12 44%);
+  }
+  .hand-zone {
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:
+      'hand hand hand'
+      'draw energy controls';
+    gap: 2px 8px;
+    height: auto;
+    align-items: center;
+  }
+  .draw-pile { grid-area: draw; justify-self: start; width: 42px; padding: 4px 2px; }
+  .draw-pile .ico, .draw-pile b, .draw-pile span { font-size: 0; }
+  .draw-pile .ico { width: 15px; height: 15px; }
+  .draw-pile b { font-size: 11px; }
+  .draw-pile span { display: none; }
+  .energy-orb { grid-area: energy; width: 48px; height: 48px; }
+  .energy-orb b { font-size: 19px; }
+  .energy-orb i { left: calc(50% + 8px); font-size: 7px; }
+  .energy-orb > span:last-of-type { display: none; }
+  .energy-orb em { display: none; }
+  .hand {
+    grid-area: hand;
+    --card-w: clamp(54px, 16.4vw, 78px);
+    height: auto;
+    min-height: 102px;
+    padding: 16px 0 2px;
+    justify-content: center;
+  }
+  .hand.many { --card-w: clamp(58px, 17vw, 82px); }
+  .hand.many .hand-slot + .hand-slot { margin-left: calc(var(--card-w) * -0.56); }
+  .hand-slot + .hand-slot { margin-left: 2px; }
+  .hand-slot:hover .card { transform: none; }
+  .hand-slot .card { border-radius: 9px; padding: 3px; }
+  .hand .card-type, .hand .card-foot { display: none; }
+  .hand .card-art { flex-basis: 44%; }
+  .hand .card-body { padding: 3px 2px 1px; }
+  .hand .card-name { font-size: clamp(7px, 8.4cqw, 10px); }
+  .hand .card-desc { font-size: clamp(6.4px, 7.8cqw, 9px); -webkit-line-clamp: 4; margin-top: 2px; }
+  .hand .card-cost { width: 21px; height: 21px; font-size: 11px; top: 3px; left: 3px; }
+  .hand .key-badge { display: none; }
+  .empty-hand { font-size: 9px; }
+  .empty-hand .ico { width: 18px; height: 18px; }
+
+  .turn-controls { grid-area: controls; justify-self: end; gap: 4px; }
+  .turn-controls .pile { display: none; }
+  .end-turn {
+    flex-direction: row;
+    gap: 5px;
+    min-width: 84px;
+    min-height: 38px;
+    padding: 5px 9px;
+  }
+  .end-turn span { font-size: 10.5px; }
+  .end-turn kbd { height: 16px; min-width: 16px; font-size: 8px; }
+
+  /* result screens */
+  .result-screen { padding: 16px 10px calc(26px + env(safe-area-inset-bottom, 0px)); }
+  .result-head h1 { font-size: clamp(30px, 8vw, 42px); }
+  .result-head p { font-size: 11.5px; }
+  .result-hero { margin: 14px 0 4px; gap: 12px; }
+  .result-kin { width: 105px; }
+  .reward-gold b { font-size: 26px; }
+  .result-note { font-size: 10px; max-width: 220px; }
+  .reward-heading { margin: 14px 0 10px; font-size: 8px; }
+  .reward-heading i { font-size: 9px; }
+  .card-offer { gap: 7px; justify-content: center; padding: 4px 0 10px; overflow: visible; }
+  .card-offer .card, .single-card-offer .card { width: clamp(100px, 29vw, 126px); }
+  .result-actions { margin-top: 4px; }
+  .result-actions .btn { min-height: 40px; font-size: 12.5px; }
+
+  .catch-screen { padding-top: 10px; }
+  .catch-kin { width: clamp(110px, 27vw, 160px); }
+  .catch-rings { width: 210px; height: 210px; }
+  .catch-hero h1 { font-size: clamp(30px, 8.4vw, 44px); }
+  .catch-lore { font-size: 11px; max-width: 360px; }
+  .catch-bonuses { gap: 4px 5px; margin: 11px 0 0; }
+  .catch-bonuses span { font-size: 9px; padding: 3px 7px; }
+  .catch-bonuses .ico { width: 10px; height: 10px; }
+
+  .charm-offer { gap: 7px; margin: 16px 0 10px; }
+  .charm-tile { padding: 14px 8px 12px; }
+  .charm-big { width: 48px; height: 48px; margin-bottom: 3px; }
+  .charm-big .ico { width: 23px; height: 23px; }
+  .charm-halo { width: 66px; height: 66px; }
+  .charm-name { font-size: 12.5px; }
+  .charm-desc { font-size: 9.5px; line-height: 1.4; }
+  .charm-flavor { display: none; }
+
+  /* shop */
+  .shop-screen { padding: 14px 10px calc(28px + env(safe-area-inset-bottom, 0px)); }
+  .shop-head { padding: 13px; gap: 12px; border-radius: 14px; }
+  .shop-keeper { width: 74px; }
+  .shop-greeting { font-size: 11px; line-height: 1.5; }
+  .shop-section { margin-top: 20px; }
+  .shop-cards { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+  .shop-item { scroll-snap-align: start; padding: 6px; }
+  .shop-item .card { width: 128px; }
+  .shop-charms { flex-direction: column; }
+  .shop-charm-item { width: 100%; }
+  .service-list { grid-template-columns: 1fr; }
+  .shop-footer .btn { width: 100%; }
+  .shop-section-head h2 { font-size: 14px; }
+  .shop-section-head span { display: none; }
+
+  /* camp */
+  .rest-scene { height: 150px; }
+  .campfire { width: 150px; }
+  .rest-options { grid-template-columns: 1fr; gap: 7px; margin-top: 14px; }
+  .rest-option { flex-direction: row; align-items: center; text-align: left; gap: 10px; padding: 10px 12px; }
+  .rest-ic { width: 34px; height: 34px; margin: 0; flex: none; }
+  .rest-option b { flex: none; width: 54px; }
+  .rest-option i { font-size: 10px; }
+
+  /* glade */
+  .glade-options { grid-template-columns: 1fr; gap: 8px; margin-top: 14px; }
+  .glade-option { flex-direction: row; text-align: left; align-items: center; gap: 12px; padding: 10px 12px; }
+  .glade-figure { width: 96px; height: 112px; flex: none; margin: 0; }
+  .glade-info { align-items: flex-start; }
+  .glade-name { font-size: 17px; }
+  .glade-lore { font-size: 9.5px; min-height: 0; margin-top: 3px; }
+  .glade-trait { margin-top: 4px; font-size: 9px; }
+  .glade-sig { font-size: 9px; }
+  .glade-head p { font-size: 11px; }
+  .glade-screen .result-actions .btn { width: 100%; }
+
+  /* end */
+  .end-content { padding-top: 32px; }
+  .end-content h1 { font-size: clamp(38px, 11vw, 58px); }
+  .end-flavor { font-size: 12px; margin-top: 12px; }
+  .end-stats { grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 18px; }
+  .end-stats > div { padding: 8px 4px; }
+  .end-stats b { font-size: 22px; }
+  .end-stats span { font-size: 7px; }
+  .end-caught { margin-top: 16px; }
+  .caught-mini { width: 50px; }
+  .caught-mini .art-svg { height: 29px; }
+  .end-tip { margin-top: 14px; font-size: 9.5px; }
+  .end-actions { margin-top: 18px; width: 100%; }
+  .end-actions .btn { flex: 1; min-width: 130px; }
+  .end-creature { width: 80vw; top: 46%; }
+
+  /* modals */
+  .modal-backdrop { padding: calc(8px + env(safe-area-inset-top, 0px)) 8px calc(8px + env(safe-area-inset-bottom, 0px)); }
+  .modal, .modal.wide { width: calc(100vw - 16px); max-height: 92dvh; border-radius: 14px; }
+  .modal-head { padding: 14px 48px 11px 16px; }
+  .modal-head h2 { font-size: 22px; }
+  .modal-close { top: 12px; right: 12px; width: 30px; height: 30px; }
+  .modal-body { padding: 14px 14px 20px; }
+  .deck-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .deck-cell .card { max-width: 100%; }
+  .dex-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .help-grid { grid-template-columns: 1fr; }
+  .status-glossary { grid-template-columns: 1fr; }
+  .help-keys { gap: 7px 12px; }
+  .menu-buttons .btn { min-height: 42px; }
+  .confirm-actions .btn { flex: 1; }
+
+  .catch-word { bottom: 14%; }
+  .catch-word span { font-size: 24px; }
+  .fx-banner { top: 14%; padding: 8px 16px; }
+  .fx-num { font-size: 23px; }
+
+  /* mobile hover off */
+  .card-offer .card:hover { transform: none; }
+  .map-node:hover { transform: none; }
+}
+
+@media (max-width: 520px) {
+  .brand-word { display: none; }
+  .hud-floor { display: none; }
+  .hud-hpbar { width: 38px; }
+  .hud-actions .hud-btn b { display: none; }
+  .hud-actions .hud-btn { padding: 6px 8px; }
+  .title-small-buttons { width: 100%; }
+  .title-small-buttons .btn { flex: 1; }
+  .title-meta .dot { display: none; }
+  .map-head p { display: none; }
+  .map-head h1 { font-size: 24px; }
+  .map-progress b { font-size: 21px; }
+  .map-scroll { height: 50vh; min-height: 300px; }
+  .map-row { min-height: 84px; padding-left: 24px; }
+  .map-node { width: 96px; }
+  .node-disc { width: 43px; height: 43px; }
+  .node-pulse { width: 43px; height: 43px; margin-left: -21.5px; }
+  .node-name { font-size: 7.5px; }
+  .legend-grid { grid-template-columns: 1fr 1fr; }
+  .enemy-figure { height: clamp(108px, 21vh, 176px); }
+  .player-figure { height: clamp(74px, 14vh, 116px); }
+  .player-side { width: 96px; }
+  .arena-center { bottom: 18%; }
+  .catch-orb { width: 56px; height: 56px; }
+  .catch-hint { font-size: 7.5px; padding: 3px 7px; }
+  .intent-text i { max-width: 50vw; }
+  .catch-bonuses span { font-size: 8.5px; }
+  .result-hero { flex-direction: column; gap: 4px; text-align: center; }
+  .result-summary { align-items: center; }
+  .result-note { max-width: 260px; }
+  .result-kin { width: 80px; }
+  .card-offer .card, .single-card-offer .card { width: clamp(96px, 28.6vw, 118px); }
+  .charm-offer { grid-template-columns: 1fr; }
+  .charm-tile { flex-direction: row; flex-wrap: wrap; align-items: center; text-align: left; gap: 4px 12px; padding: 11px 12px; }
+  .charm-big { width: 42px; height: 42px; margin: 0; flex: none; }
+  .charm-big .ico { width: 20px; height: 20px; }
+  .charm-halo { display: none; }
+  .charm-name { flex: 1; font-size: 13px; min-width: 120px; }
+  .charm-desc { order: 3; flex-basis: 100%; font-size: 10px; max-width: none; }
+  .price-tag, .free-tag { order: 2; margin-top: 0; }
+  .shop-keeper { display: none; }
+  .glade-figure { width: 74px; height: 92px; }
+  .glade-lore { display: none; }
+  .glade-name { font-size: 15px; }
+  .caught-mini { width: 46px; }
+  .modal-head { padding-left: 14px; }
+  .modal-body { padding-left: 12px; padding-right: 12px; }
+  .deck-grid { gap: 6px; }
+  .dex-grid { gap: 6px; }
+  .status-glossary { grid-template-columns: 1fr; }
+}
+
+@media (max-height: 700px) and (min-width: 761px) {
+  .combat-bottom { height: 206px; }
+  .player-figure { height: clamp(110px, 20vh, 170px); }
+  .enemy-figure { height: clamp(105px, 20vh, 180px); }
+  .enemy-side { top: 26px; }
+  .combat-log { bottom: 8px; }
+  .combat-log span:nth-child(2) { display: none; }
+  .map-scroll { height: calc(100dvh - var(--topbar) - 190px); min-height: 380px; }
+}
+
+/* landscape phones / very short windows */
+@media (max-height: 570px) and (orientation: landscape) {
+  :root { --topbar: 46px; }
+  .topbar { min-height: 46px; }
+  .brand-word { display: none; }
+  .hud-hpbar { width: 44px; }
+  .brand-mark { width: 25px; height: 25px; }
+
+  .combat-screen { height: 100%; }
+  .combat-bottom { height: 150px; padding: 0 8px 3px; }
+  .hand-zone { display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; gap: 5px; height: 100%; }
+  .hand { --card-w: clamp(48px, 7vw, 72px); padding: 10px 2px 2px; height: 100%; }
+  .hand .card-type, .hand .card-foot { display: none; }
+  .hand .card-desc { font-size: 6.4px; -webkit-line-clamp: 3; }
+  .pile { width: 38px; padding: 3px; }
+  .pile .ico { width: 13px; height: 13px; }
+  .pile b { font-size: 10px; }
+  .pile span { display: none; }
+  .energy-orb { width: 44px; height: 44px; }
+  .energy-orb b { font-size: 18px; }
+  .energy-orb > span:last-of-type, .energy-orb em, .energy-orb i { display: none; }
+  .end-turn { min-height: 40px; padding: 4px 8px; flex-direction: row; gap: 4px; }
+  .end-turn span { font-size: 10px; }
+  .end-turn kbd { display: none; }
+  .turn-controls .pile { display: none; }
+
+  .arena-topline { top: 5px; }
+  .enemy-side { top: 20px; right: 4%; width: 240px; }
+  .enemy-figure { height: 92px; }
+  .enemy-nameplate i, .trait-line { display: none; }
+  .enemy-nameplate b { font-size: 14px; }
+  .enemy-nameplate .eyebrow { display: none; }
+  .enemy-hp { width: 180px; }
+  .intent { padding: 2px 7px 2px 3px; }
+  .intent-icon { width: 19px; height: 19px; }
+  .intent-text i { display: none; }
+  .intent.second { display: none; }
+  .player-side { bottom: 2px; left: 3%; width: 88px; }
+  .player-nameplate { display: none; }
+  .player-figure { height: 78px; }
+  .player-hp { max-width: 88px; }
+  .player-side .status-row { display: none; }
+  .arena-center { bottom: 12px; }
+  .catch-orb { width: 48px; height: 48px; }
+  .catch-hint { display: none; }
+  .combat-log { display: none; }
+  .combat-hint { top: 24px; font-size: 9px; padding: 5px 8px; }
+  .arena-moon { width: 70px; }
+  .combat-mode { display: none; }
+
+  .title-content { padding-top: 22px; }
+  .logo { font-size: clamp(44px, 8vw, 70px); }
+  .title-lede { display: none; }
+  .title-buttons { margin-top: 16px; gap: 7px; }
+  .title-meta { margin-top: 12px; }
+  .title-footer { padding-top: 6px; padding-bottom: 6px; }
+  .title-creature { display: none; }
+  .prologue-inner { padding: 24px 26px; }
+  .prologue-inner .display { font-size: 34px; }
+  .prologue-copy { margin-top: 10px; font-size: 12px; }
+  .prologue-steps { grid-template-columns: repeat(3, 1fr); margin-top: 14px; }
+  .pstep { flex-direction: column; align-items: flex-start; gap: 2px; padding: 8px; }
+  .pstep-ic { width: 24px; height: 24px; }
+  .pstep b { width: auto; font-size: 11px; }
+  .pstep i { font-size: 9px; }
+  .prologue-actions { margin-top: 14px; }
+  .prologue-actions .btn { min-height: 42px; }
+  .prologue-creature { width: 28vw; opacity: 0.3; }
+
+  .map-screen { padding-top: 10px; padding-bottom: 10px; }
+  .map-scroll { height: calc(100dvh - 46px - 150px); min-height: 260px; }
+  .map-head p { display: none; }
+
+  .result-screen { padding: 12px 18px 18px; }
+  .result-head h1 { font-size: 28px; }
+  .result-hero { margin: 4px 0; }
+  .result-kin { width: 76px; }
+  .reward-heading { margin: 6px 0 6px; }
+  .card-offer .card { width: 104px; }
+  .catch-kin { width: 92px; margin-bottom: -12px; }
+  .catch-hero h1 { font-size: 30px; }
+  .catch-lore { display: none; }
+  .catch-bonuses { margin: 5px 0 0; }
+  .charm-offer { margin: 8px 0; }
+  .charm-tile { padding: 8px; }
+  .charm-big { width: 38px; height: 38px; }
+  .charm-halo { display: none; }
+  .charm-flavor { display: none; }
+  .shop-screen { padding-top: 10px; }
+  .shop-head { padding: 10px; }
+  .shop-keeper { width: 64px; }
+  .shop-greeting { display: none; }
+  .rest-scene { height: 90px; }
+  .campfire { width: 100px; }
+  .rest-options .rest-option { padding: 8px; }
+  .glade-figure { height: 80px; }
+  .glade-lore { display: none; }
+  .end-content { padding-top: 14px; }
+  .end-content h1 { font-size: 36px; }
+  .end-flavor { display: none; }
+  .end-stats { margin-top: 10px; }
+  .end-caught { display: none; }
+  .end-actions { margin-top: 12px; }
+  .modal { max-height: 94dvh; }
+}
+
+@media (min-width: 1600px) {
+  .map-screen { grid-template-columns: minmax(0, 1fr) 360px; }
+  .hand { --card-w: 154px; }
+  .hand.many { --card-w: 158px; }
+  .combat-bottom { height: 282px; }
+  .enemy-figure { height: 250px; }
+  .player-figure { height: 236px; }
+}
